@@ -13848,6 +13848,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libdisplaydebug",
                 "libtinyxml2_1",
+                "libbase",
                 "libc++",
                 "libc",
                 "libm",
@@ -13928,6 +13929,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libutils",
                 "libdisplaydebug",
+                "libsdmutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -14491,6 +14493,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libgrpc++_unsecure_prebuilt.so",
             ],
             shared_libs: [
+                "libz",
                 "liblog",
                 "libc++",
                 "libc",
@@ -15176,6 +15179,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libloc_util",
                 "libcdfw",
+                "libloc_core",
                 "libc++",
                 "libc",
                 "libm",
@@ -21052,6 +21056,7 @@ cc_prebuilt_library_shared {
                 "libtestutils",
                 "libcrypto",
                 "libssl",
+                "libbase",
                 "libc++",
                 "libc",
                 "libm",
@@ -25124,7 +25129,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.gnss-V3-ndk_platform",
+    name: "vendor.qti.gnss-V3-ndk",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -25132,7 +25137,32 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.qti.gnss-V3-ndk_platform.so",
+                "proprietary/vendor/lib64/vendor.qti.gnss-V3-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss-V5-ndk",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss-V5-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -25162,7 +25192,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libbase",
                 "libbinder_ndk",
-                "vendor.qti.gnss-V3-ndk_platform",
+                "vendor.qti.gnss-V5-ndk",
                 "liblog",
                 "libcutils",
                 "libutils",
@@ -33192,6 +33222,48 @@ cc_prebuilt_binary {
                 "libhidlbase",
                 "vendor.display.postproc@1.0",
                 "vendor.display.color@1.7",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qcc-trd",
+    owner: "xiaomi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/qcc-trd",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libprotobuf-cpp-full-3.9.1-vendorcompat",
+                "libgrpc++_unsecure_prebuilt",
+                "libqcc_file_agent",
+                "libqmi_cci",
+                "libqmiservices",
+                "libidl",
+                "libnl",
+                "libfmq",
+                "libhidlbase",
+                "vendor.qti.hardware.qccsyshal@1.1_vendor",
+                "libz",
+                "libbinder",
+                "libbase",
+                "vendor.qti.hardware.qccvndhal@1.0_vendor",
+                "vendor.qti.hardware.qccvndhal@1.0-halimpl",
                 "libc++",
                 "libc",
                 "libm",

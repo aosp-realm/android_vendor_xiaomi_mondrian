@@ -1628,7 +1628,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.diaghal@1.0_vendor \
     vendor.qti.esepowermanager@1.0 \
     vendor.qti.esepowermanager@1.1 \
-    vendor.qti.gnss-V3-ndk_platform \
+    vendor.qti.gnss-V3-ndk \
+    vendor.qti.gnss-V5-ndk \
     vendor.qti.gnss-service \
     vendor.qti.hardware.AGMIPC@1.0-impl \
     vendor.qti.hardware.alarm@1.0 \
@@ -1984,6 +1985,7 @@ PRODUCT_PACKAGES += \
     port-bridge \
     power_off_alarm \
     ppd \
+    qcc-trd \
     qcom-system-daemon \
     qdcmss \
     qmipriod \
